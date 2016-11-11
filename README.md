@@ -3,18 +3,17 @@ Simple hand-rolled RPC(remote procedure call) service.
 
 <b>Purpose</b>
 
-The object of this assignment is to create a simple hand-rolled RPC service (do not use the ONC RPC tools!) that takes 2-dimensional points (pairs of double-precision floating point numbers) and perform useful functions. 
-To keep things simple, we will only provide cartesian_distance() and midpoint() operations.
+The object was to create a simple hand-rolled RPC service (do not use the ONC RPC tools!) that takes 2-dimensional points (pairs of double-precision floating point numbers) and perform useful functions.
 
 The functions return 0 on success and -1 on failure, so the result value to be returned must be passed in as a pointer arguement. The caller must allocate space for the return result.
 
-RPC is a C++ class (which you will define) containing the parameters for making a UDP call to the RPC service, including host, port, timeout, and max_retries.
+RPC is a C++ class containing the parameters for making a UDP call to the RPC service, including host, port, timeout, and max_retries.
 
 The client-side stubs will marshal and unmarshal the arguments, but use a method of the RPC class to perform the network communication.
 
 Use the setsockopt() parameter SO_RCVTIMEO to control the timeout waiting for a response from the server.
 
-To keep things simple, you may hardcode timeout to 5 seconds and max_retries to 3.
+To keep things simple, we set timeout to 5 seconds and max_retries to 3.
 
 <b>Server Program</b>
 
